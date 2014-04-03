@@ -12,7 +12,6 @@ typedef enum {
 				ANDLW,
 				XORLW,
 } Mnemonic;
-//TBLRD**
 
 typedef enum {
 				NO_ERROR,

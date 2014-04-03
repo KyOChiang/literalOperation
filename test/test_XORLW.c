@@ -289,3 +289,4 @@ void test_xorlw_with_valid_operand1_0xA5_should_xor_to_WREG_return_0x20_and_do_n
 	TEST_ASSERT_EQUAL_HEX8(0x00,FSR[STATUS]);
 
 }
+
