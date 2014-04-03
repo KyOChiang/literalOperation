@@ -76,3 +76,110 @@ void test_andlw_with_valid_operand1_0x5A_should_xor_to_WREG_return_0x10(){
 
 }
 
+void test_andlw_with_non_empty_operand2_0x00_should_throw_exception(){
+	CEXCEPTION_T operandERR;
+	
+	//Test fixture
+	//-1 represent empty
+	Bytecode code = {.instruction = {.mnemonic = ANDLW, .name = "andlw"},
+					 .operand1 = 0x0A,
+					 .operand2 = 0,
+					 .operand3 = -1
+					 };
+	
+	FSR[WREG] = 0xB5;
+	Try{
+		andlw(&code);
+	} Catch(operandERR){
+		TEST_ASSERT_EQUAL(ERR_INVALID_OPERAND2,operandERR);
+	}
+	
+	TEST_ASSERT_EQUAL_HEX8(0xB5,FSR[WREG]);
+
+}
+
+void test_andlw_with_non_empty_operand2_F_should_throw_exception(){
+	CEXCEPTION_T operandERR;
+
+	Bytecode code = {.instruction = {.mnemonic = ANDLW, .name = "andlw"},
+					 .operand1 = 0x0A,
+					 .operand2 = F,
+					 .operand3 = -1
+					 };
+	
+	FSR[WREG] = 0xB5;
+
+	
+	Try{
+		andlw(&code);
+	} Catch(operandERR){
+		TEST_ASSERT_EQUAL(ERR_INVALID_OPERAND2,operandERR);
+	}
+	
+	TEST_ASSERT_EQUAL_HEX8(0xB5,FSR[WREG]);
+
+}
+
+void test_andlw_with_non_empty_operand2_W_should_throw_exception(){
+	CEXCEPTION_T operandERR;
+	
+	Bytecode code = {.instruction = {.mnemonic = ANDLW, .name = "andlw"},
+					 .operand1 = 0x0A,
+					 .operand2 = W,
+					 .operand3 = -1
+					 };
+	
+	FSR[WREG] = 0xB5;
+
+	Try{
+		andlw(&code);
+	} Catch(operandERR){
+		TEST_ASSERT_EQUAL(ERR_INVALID_OPERAND2,operandERR);
+	}
+	
+	TEST_ASSERT_EQUAL_HEX8(0xB5,FSR[WREG]);
+
+}
+
+void test_andlw_with_non_empty_operand3_BANKED_should_throw_exception(){
+	CEXCEPTION_T operandERR;
+	
+	Bytecode code = {.instruction = {.mnemonic = ANDLW, .name = "andlw"},
+					 .operand1 = 0x0A,
+					 .operand2 = -1,
+					 .operand3 = BANKED
+					 };
+	
+	FSR[WREG] = 0xB5;
+	
+	Try{
+		andlw(&code);
+	} Catch(operandERR){
+		TEST_ASSERT_EQUAL(ERR_INVALID_OPERAND3,operandERR);
+	}
+	
+	TEST_ASSERT_EQUAL_HEX8(0xB5,FSR[WREG]);
+
+}
+
+void test_andlw_with_non_empty_operand3_ACCESS_should_throw_exception(){
+	CEXCEPTION_T operandERR;
+	
+	Bytecode code = {.instruction = {.mnemonic = ANDLW, .name = "andlw"},
+					 .operand1 = 0x0A,
+					 .operand2 = -1,
+					 .operand3 = ACCESS
+					 };
+	
+	FSR[WREG] = 0xB5;
+	
+	Try{
+		andlw(&code);
+	} Catch(operandERR){
+		TEST_ASSERT_EQUAL(ERR_INVALID_OPERAND3,operandERR);
+	}
+	
+	TEST_ASSERT_EQUAL_HEX8(0xB5,FSR[WREG]);
+
+}
+

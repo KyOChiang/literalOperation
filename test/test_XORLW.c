@@ -76,7 +76,7 @@ void test_xorlw_with_valid_operand1_0x0A_should_xor_to_WREG_return_0xBF(){
 
 }
 
-void test_xorlw_with_non_empty_operand2_0x0A_should_throw_exception(){
+void test_xorlw_with_non_empty_operand2_0x00_should_throw_exception(){
 	CEXCEPTION_T operandERR;
 	
 	//Test fixture
@@ -103,7 +103,7 @@ void test_xorlw_with_non_empty_operand2_0x0A_should_throw_exception(){
 
 }
 
-void test_xorlw_with_non_empty_operand2_F_0x0A_should_throw_exception(){
+void test_xorlw_with_non_empty_operand2_F_should_throw_exception(){
 	CEXCEPTION_T operandERR;
 	
 	//Test fixture
@@ -130,7 +130,7 @@ void test_xorlw_with_non_empty_operand2_F_0x0A_should_throw_exception(){
 
 }
 
-void test_xorlw_with_non_empty_operand2_W_0x0A_should_throw_exception(){
+void test_xorlw_with_non_empty_operand2_W_should_throw_exception(){
 	CEXCEPTION_T operandERR;
 	
 	//Test fixture
@@ -157,7 +157,7 @@ void test_xorlw_with_non_empty_operand2_W_0x0A_should_throw_exception(){
 
 }
 
-void test_xorlw_with_non_empty_operand3_BANKED_0x0A_should_throw_exception(){
+void test_xorlw_with_non_empty_operand3_BANKED_should_throw_exception(){
 	CEXCEPTION_T operandERR;
 	
 	//Test fixture
@@ -183,7 +183,7 @@ void test_xorlw_with_non_empty_operand3_BANKED_0x0A_should_throw_exception(){
 
 }
 
-void test_xorlw_with_non_empty_operand3_ACCESS_0x0A_should_throw_exception(){
+void test_xorlw_with_non_empty_operand3_ACCESS_should_throw_exception(){
 	CEXCEPTION_T operandERR;
 	
 	//Test fixture
