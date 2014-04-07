@@ -6,6 +6,6 @@
 
 extern char FSR[];
 
-void andlw(Bytecode *code);
+int andlw(Bytecode *code);
 
 #endif

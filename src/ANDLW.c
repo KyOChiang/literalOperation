@@ -4,7 +4,7 @@
 
 char FSR[0x1000];
 
-void andlw(Bytecode *code){
+int andlw(Bytecode *code){
 
 	if(code->operand2 != -1)
 		Throw(ERR_INVALID_OPERAND2);
@@ -23,5 +23,7 @@ void andlw(Bytecode *code){
 	}
 	else
 		Throw(ERR_INVALID_OPERAND1);
+		
+	return (code->absoluteAddress = code->absoluteAddress + 1);
 	
 }
